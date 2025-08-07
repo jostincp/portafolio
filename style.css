@@ -12,8 +12,8 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #ffffff;
+    color: #f9fafb;
+    background-color: #1f2937;
     overflow-x: hidden;
 }
 
@@ -22,13 +22,13 @@ body {
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
     --accent-color: #3b82f6;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
     --text-light: #9ca3af;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
+    --bg-primary: #1f2937;
+    --bg-secondary: #111827;
     --bg-dark: #1f2937;
-    --border-color: #e5e7eb;
+    --border-color: #374151;
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -138,7 +138,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(31, 41, 55, 0.98);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -146,7 +146,7 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(31, 41, 55, 0.98);
     box-shadow: var(--shadow-md);
 }
 
@@ -173,7 +173,8 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--text-secondary);
+    padding: 4px 0;
     font-weight: 500;
     transition: var(--transition);
     position: relative;
@@ -187,12 +188,17 @@ body {
     width: 0;
     height: 2px;
     background: var(--primary-color);
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, background 0.3s ease;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.nav-link.active, .nav-link:focus, .nav-link:hover {
+    color: var(--primary-color) !important;
 }
 
 .nav-toggle {
@@ -391,7 +397,7 @@ section {
 .stat-item {
     text-align: center;
     padding: 20px;
-    background: white;
+    background: var(--bg-primary);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
@@ -424,7 +430,7 @@ section {
 }
 
 .skill-category {
-    background: white;
+    background: var(--bg-primary);
     padding: 30px;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-sm);
@@ -486,7 +492,7 @@ section {
 }
 
 .project-card {
-    background: white;
+    background: var(--bg-primary);
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
@@ -570,7 +576,7 @@ section {
 }
 
 .service-card {
-    background: white;
+    background: var(--bg-primary);
     padding: 40px 30px;
     border-radius: var(--border-radius-lg);
     text-align: center;
@@ -654,7 +660,7 @@ section {
 }
 
 .contact-form {
-    background: white;
+    background: var(--bg-primary);
     padding: 40px;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-sm);
@@ -858,7 +864,7 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: white;
+        background-color: var(--bg-dark);
         width: 100%;
         text-align: center;
         transition: 0.3s;
