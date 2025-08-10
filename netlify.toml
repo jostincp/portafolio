@@ -1,0 +1,7 @@
+# Netlify configuration file
+
+[[redirects]]
+  from = "/fitness"
+  to = "https://fitness.testjostin.pro"
+  status = 200
+  force = true
